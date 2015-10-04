@@ -15,7 +15,7 @@ Sends an ajax call to CF api to retrieve the user info. Stores them into mysql d
 
 ####Update:
 Retrieves all the user info from DB and send an ajax call to CF API for **ALL** the submissions!  
-Note that the request takes a lot of time and is currently limited to fetch recent 100 submissions only.  
+Note that the request takes a lot of time and currently runs only for 100s.  
 Otherwise it might exceed the timelimit of the server.  
 
 
