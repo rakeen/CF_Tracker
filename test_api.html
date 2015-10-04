@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Info</title>
+
+</head>
+<body>
+
+	<div class="allUsr">
+		<div>
+			<h1 class="user"></h1>
+			<a href="#" class="clk">Click Me!!!</a>
+		</div>
+	</div>
+
+
+
+
+
+<script type="text/javascript" src="./jquery.js"></script>
+
+<script type="text/javascript">
+	$( document ).ready(function() {
+
+    	$(".clk").click(function(){    		
+    		$.ajax({
+    		  type: "GET",			  
+    		  url: "http://codeforces.com/api/user.info?handles=nabila_ahmed&jsonp=parseResponse",			  
+    		  jsonpCallback: "parseResponse",
+			  jsonp: "callback",
+			  dataType: "jsonp",
+
+			  success: function(user){			  	
+			  	//console.log(user.result[0].city);			  				  	
+			  	$(".allUsr").append("<div><h2>"+user.result[0].handle+"</h2></div>");
+			  	$(".allUsr").append("<div><h3>"+user.result[0].rank+" ("+user.result[0].rating+")</h2></div>");
+			  	$(".allUsr").append("<div><h3>"+user.result[0].organization+"</h3></div>");
+			  	$(".allUsr").append("<div><h4>"+user.result[0].city+" , "+user.result[0].country+"</h4></div>");
+			  }
+
+			});
+    	});    	
+
+	});
+
+</script>
+
+
+</body>
+</html>

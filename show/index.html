@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Query Page</title>
+
+	<link rel="stylesheet" type="text/css" href="./css/datepicker.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css">
+
+	<script type="text/javascript" src="./js/jq.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+	
+	<!-- depricated
+		<script type="text/javascript" src="http://eonasdan.github.io/bootstrap-datetimepicker/scripts/moment.js"></script>
+	-->
+	<script type="text/javascript" src="http://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/master/src/js/bootstrap-datetimepicker.js"></script>	
+</head>
+
+
+<body>
+	<div class="container">
+		<form action="./query.php" method="post">
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="form-group">
+					<label class="label label-default">Starting Date</label>
+	                <div class='input-group date' id='datetimepicker1'>
+	                    <input type='text' class="form-control start" name="start" data-date-format="YYYY:MM:DD hh:mm:ss"/>
+	                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+	                    </span>
+	                </div>
+            	</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="form-group">
+					<label class="label label-default">Ending Date</label>
+	                <div class='input-group date' id='datetimepicker2'>
+	                    <input type='text' class="form-control end" name="end" data-date-format="YYYY:MM:DD hh:mm:ss" />
+	                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+	                    </span>
+	                </div>
+            	</div>
+			</div>
+
+
+			<div class="col-sm-3">				
+				<select name="verdict" class="dropdown btn btn-default">						
+					<option value="ALL">ALL</option>
+					<option value="AC">AC</option>
+					<option value="WA">WA</option>
+					<option value="TLE">TLE</option>
+				</select>
+			</div>
+			<input type="submit" value="Show" class="btn btn-default">
+		</div>		
+		</form>
+	</div>
+
+
+	<script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker();
+            $('#datetimepicker2').datetimepicker();
+        });
+    </script>
+
+</body>
+</html>
